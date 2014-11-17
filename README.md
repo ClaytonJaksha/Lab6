@@ -14,3 +14,11 @@ In this lab, we will use `TA0` to measure incoming IR signals from our remote co
 | Left           |         0         |        PWM        |         PWM        |          0         |
 | Right          |        PWM        |         0         |          0         |         PWM        |
 | Reverse        |         0         |        PWM        |          0         |         PWM        |
+
+The positive lead of the left motor will be attached to `P1.3`
+
+The negative lead of the left motor will be attached to `P1.4`
+
+The positive lead of the right motor will be attached to `P1.5`
+
+The negative lead of the right motor will be attached to `P1.6`
