@@ -5,7 +5,7 @@ ECE 382 Lab 6: Robot Motion
 
 
 ## Prelab
-In this lab, we will use `TA0` to measure incoming IR signals from our remote control, `TA1` to control left motor PWM outputs, and `TA2` to control right motor outputs.
+In this lab, we will use `TA0` to measure incoming IR signals from our remote control, `TA1` to control left motor PWM outputs and right motor outputs.
 
 ##### Directionality Matrix
 | Directionality | Left Motor <br></br> + Lead | Left Motor <br></br> - Lead | Right Motor <br></br> + Lead | Right Motor <br></br> - Lead |
