@@ -1,8 +1,8 @@
 //-----------------------------------------------------------------
-// Name:	Jaksha
-// File:	lab5.c
-// Date:	Fall 2014
-// Purp:	Demo the decoding of an IR packet
+// Name:	Jaksha, Clayton, B.
+// File:	main.c
+// Date:	30 NOV 2014
+// Purp:	Make Robert the robot move with signals from a remote control.
 //-----------------------------------------------------------------
 #include <msp430g2553.h>
 #include "start5.h"
