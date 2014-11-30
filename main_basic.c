@@ -12,11 +12,11 @@
 void main(void) {
 
 	initMSP430();
-	P2OUT&=~(BIT4|BIT2|BIT1|BIT5);
+	P2OUT&=~(BIT4|BIT2|BIT1|BIT5);	//ensure robot is completely stopped before moving forward.
 	stopRobot();
 	while(1){
-	moveRobotForward();
-	__delay_cycles(10000000);
+	moveRobotForward();		//makes the robot move forward
+	__delay_cycles(10000000);	//delays for a brief period of time
 	moveRobotLeft();
 	__delay_cycles(3500000);
 	moveRobotForward();
