@@ -282,31 +282,28 @@ Initialization remained exactly the same from basic functionality, so I will not
 
 ## Debugging
 
-Debugging was primarily done by looking at the Nokia 1202 display and the stored register and expression values within CCS-6.0's debugging feature. Also, for A functionality, I left my LED stuff from basic functionality too to make sure everything up until the if statements were working.
+Debugging was primarily done by looking at the Nokia 1202 display and the stored register and expression values within CCS-6.0's debugging feature. I also used an oscilloscope to peer into the PWM signals coming from the microcontroller and from the motor driver chip. Also, for A functionality, ensured my old code from lab 5 still worked before continuing onward with the lab..
 
 ## Testing Methodology/Results
 
 #### Testing Methodology
-To test the funcionality of my program, I attached the hardware IAW the diagram in my deisgn section, loaded the program, ran the program, and pressed buttons on my remote. If it did what I wanted, then it passed the test.
+To test the funcionality of my program, I attached the hardware IAW the diagram in my deisgn section, loaded the program, ran the program, and pressed buttons on my remote (or let the robot run). If it did what I wanted, then it passed the test.
 #### Results
 The code works!
 ##### Basic Functionality
-By pressing the "4" button on my remote, the red LED would toggle. Then, by pressing the "6" button, the green LED would toggle. Fairly straightforward to test and everything worked as expected.
+Robert the robot followed the script to the letter and did exactly what it was supposed to do.
 ##### A Functionality
-For this one, I made the etch-a-sketch function through my remote control. In my implementation, I made the "2" button move the cursor up, the "4" button move left, the "6" button move right, the "8" button move down, and the "5" button toggle color. The solution mostly worked. The basic idea of moving a block and then erasing blocks works fine, but the command `initNokia()` leaves a couple of weird ghost bits drawn on the screen with every button press.
-
-However, I would say that the goal of the lab has been accomplished.
+By pressing buttons, Robert would respond exactly how I expected.
 
 ## Observations and Conclusion
 #### Observations
 
 * Reusing previous .c and .h files can make coding faster and modular.
-* ISRs and Nokia displays may not work together easily. Be careful for future projects.
-* Structures and fun and easy to use. They enable a group of information to be stored in an organized manner.
+* Hardware can be tricky, read datasheets!
 
 #### Conclusion
 
-The etch-a-sketch worked according to specs (well, mostly). The Army team is fully prepared to beat everyone ever.
+Robert the robot can move in a controlled, exact manner by himself or with commands from a user. Be afraid, be very afraid.
 
 ## Documentation
 
