@@ -83,7 +83,7 @@ This is the basic initialization for functionality of the code. It includes all 
 #include "start5.h"
 #include "functions.h"
 ```
-This is the main loop script. It changes the settings for the outputs, delays, changes again, delays again, etc.
+This is the main loop script. It changes the settings for the outputs, delays, changes again, delays again, etc. The explanation for each individual function can be found in `functions.c`. However, to offer a quick summary, all that happens is the OUTMOD and GPIO pins switch in accordance with the desired movement.
 ```
 void main(void) {
 
@@ -111,7 +111,7 @@ void main(void) {
 	}
 } // end main
 ```
-This is the initialization for the MSP430 with its outputting.
+This is the initialization for the MSP430 with its outputting setup. I keep the LED outputs enabled as a way to troubleshoot when something goes wrong. I set up `P2.1`, `P2.3`, `P2.4`, and `P2.5` as outputs and then change the way which they are outputted in the main loop.
 ```
 void initMSP430() {
 
