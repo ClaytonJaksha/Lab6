@@ -24,7 +24,7 @@ void main(void) {
 	while(1)  {
 		if (new_packet) {
 			_disable_interrupt();
-			packetIndex2=0;
+			packetIndex2=0;					//this part consolidates the incoming packet
 			while (packetData[packetIndex2]!=2)
 			{
 				packetIndex2++;
@@ -36,7 +36,7 @@ void main(void) {
 				bitstring<<=1;
 				packetIndex2++;
 			}
-			if (bitstring==BUTTON_FIVE)
+			if (bitstring==BUTTON_FIVE)			//this part translates the packet
 			{
 				stopRobot();
 			} else if (bitstring==BUTTON_TWO)
