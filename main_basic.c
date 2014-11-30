@@ -1,8 +1,8 @@
 //-----------------------------------------------------------------
-// Name:	Jaksha
-// File:	lab5.c
-// Date:	Fall 2014
-// Purp:	Demo the decoding of an IR packet
+// Name:	Jaksha, Clayton, B.
+// File:	main_basic.c
+// Date:	30 NOV 2014
+// Purp:	make Robert the robot move in a directed pattern
 //-----------------------------------------------------------------
 #include <msp430g2553.h>
 #include "start5.h"
