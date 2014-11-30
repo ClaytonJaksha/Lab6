@@ -308,7 +308,5 @@ The etch-a-sketch worked according to specs (well, mostly). The Army team is ful
 None
 
 
-# [ARMY-NAVY: WE MAY NOT WIN THE GAME...](http://www.youtube.com/watch?v=-HNz02SNTLY)
-![alt text](https://ct.yimg.com/mr/uploads/1162/F481716.jpg "GO ARMY, BEAT NAVY")
-# [...BUT WE ALWAYS WIN THE MARCH-ON!](http://www.youtube.com/watch?v=-HNz02SNTLY)
-![alt text](http://api.ning.com/files/aWx2PwsptW*pwbjB0AJFTG8WytorOa0xWkJ82XUyRV4mhYiCUW1ANwDIPov7o5xYfHIDR6Oyjw4JVNG-x1brpPGBa9ZvBXWa/2007army_navy.jpg?width=600 "GO ARMY, BEAT NAVY")
+# SONS OF SLUM AND GRAVY TAKE NO QUARTER
+![alt text](http://farm7.static.flickr.com/6120/6300471005_c44f5ef019.jpg "GO ARMY, BEAT NAVY")
