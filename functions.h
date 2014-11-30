@@ -1,9 +1,9 @@
-/*
- * functions.h
- *
- *  Created on: Nov 5, 2014
- *      Author: c16clayton.jaksha
- */
+//-----------------------------------------------------------------
+// Name: Jaksha, Clayton, B.
+// File: functions.h
+// Date: 30 NOV 2014
+// Purp: header file for functions that make Robert the robot move in a certain directions
+//-----------------------------------------------------------------
 
 #ifndef START5_H_
 #define START5_H_
