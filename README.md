@@ -163,7 +163,9 @@ int32	packetData[48];
 int8	packetIndex = 0;
 unsigned char get_some=FALSE;
 ```
-This is the main loop for A Functionality.
+This is the main loop for A Functionality. It is a bit more complex, so I will break it down into pieces. 
+
+The first part handles initialization of the MSP430 and all the local variables needed for operation. Once we enable interrupts, it's game on.
 ```
 void main(void) {
 
@@ -173,6 +175,9 @@ void main(void) {
 	int8	packetIndex2=0;
 	stopRobot();
 	_enable_interrupt();
+```
+This is the infinite while loop portion of the main loop---it's where the action happens. The first things that happen in this loop are all geared towards decoding `packetData[]` and turning that into `bitstring`.
+```
 	while(1)  {
 		if (get_some) {
 			_disable_interrupt();
@@ -188,6 +193,9 @@ void main(void) {
 				bitstring<<=1;
 				packetIndex2++;
 			}
+```
+Once we have settled down what `bitstring` is, we compare it with known buttons, and then execute a command for the robot based on what button is detected. If we get a `bitstring` that is unrecognized, we will stop Robert from doing anythings else. This is a safety feature in case of malfunction.
+```
 			if (bitstring==BUTTON_FIVE)
 			{
 				stopRobot();
@@ -213,6 +221,9 @@ void main(void) {
 			{
 				stopRobot();
 			}
+```
+After this, we delay a little to prevent ghost bit interrupts from the remote control and then reset everything to get ready for the next button press.
+```
 			for (i=0;i<0xFFFFF;i++);
 			bitstring=0x00000000;
 			packetIndex=0;
