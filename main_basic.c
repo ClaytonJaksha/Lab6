@@ -7,11 +7,6 @@
 #include <msp430g2553.h>
 #include "start5.h"
 #include "functions.h"
-int8	newIrPacket = FALSE;
-int32	packetData[48];
-int8	packetIndex = 0;
-unsigned char get_some=FALSE;
-unsigned int i=0;
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
 void main(void) {
