@@ -10,7 +10,7 @@
 int8	newIrPacket = FALSE;
 int32	packetData[48];
 int8	packetIndex = 0;
-unsigned char get_some=FALSE;
+unsigned char new_packet=FALSE;
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
 void main(void) {
@@ -22,7 +22,7 @@ void main(void) {
 	stopRobot();
 	_enable_interrupt();
 	while(1)  {
-		if (get_some) {
+		if (new_packet) {
 			_disable_interrupt();
 			packetIndex2=0;
 			while (packetData[packetIndex2]!=2)
@@ -65,7 +65,7 @@ void main(void) {
 			bitstring=0x00000000;
 			packetIndex=0;
 			_enable_interrupt();
-			get_some=0;
+			new_packet=0;
 		} else
 		{
 			bitstring=0x00000000;
@@ -180,7 +180,7 @@ __interrupt void pinChange (void) {
 	} // end switch
 	if (packetIndex>33)
 	{
-		get_some=1;
+		new_packet=1;
 	}
 } // end pinChange ISR
 
