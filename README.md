@@ -161,7 +161,7 @@ This is the initialization. It does pretty much the same thing as basic function
 int8	newIrPacket = FALSE;
 int32	packetData[48];
 int8	packetIndex = 0;
-unsigned char get_some=FALSE;
+unsigned char new_packet=FALSE;
 ```
 This is the main loop for A Functionality. It is a bit more complex, so I will break it down into pieces. 
 
@@ -179,7 +179,7 @@ void main(void) {
 This is the infinite while loop portion of the main loop---it's where the action happens. The first things that happen in this loop are all geared towards decoding `packetData[]` and turning that into `bitstring`.
 ```
 	while(1)  {
-		if (get_some) {
+		if (new_packet) {
 			_disable_interrupt();
 			packetIndex2=0;
 			while (packetData[packetIndex2]!=2)
@@ -228,7 +228,7 @@ After this, we delay a little to prevent ghost bit interrupts from the remote co
 			bitstring=0x00000000;
 			packetIndex=0;
 			_enable_interrupt();
-			get_some=0;
+			new_packet=0;
 		} else
 		{
 			bitstring=0x00000000;
@@ -273,7 +273,7 @@ __interrupt void pinChange (void) {
 	} // end switch
 	if (packetIndex>33)
 	{
-		get_some=1;
+		new_packet=1;
 	}
 } // end pinChange ISR
 ```
