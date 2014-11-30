@@ -77,23 +77,18 @@ For this part, I will affix my IR sensor (seen in hardware schematic) and then r
 ## Code Walkthrough
 ### Basic Functionality
 ###### Taken from `main_basic.c`
-This first portion of the includes the MSP 430 library and the header file for some important functions I will go on to describe. It also initializes and declares the global variables `packetData`, `packetIndex`, and `packet_flag`. `packetData` is the array that holds `0`s and `1`s, `packetIndex` is the pointer for locations within that array, and `packet_flag` lets the program know when we've interupted enough times to have a whole packet to read.
+This is the basic initialization for functionality of the code. It includes all the necessary header files and that's basically it. The basic functionality code is pretty simple.
 ```
 #include <msp430g2553.h>
 #include "start5.h"
 #include "functions.h"
-int8	newIrPacket = FALSE;
-int32	packetData[48];
-int8	packetIndex = 0;
-unsigned char get_some=FALSE;
-unsigned int i=0;
 ```
-This is the main loop. We first call the `initMSP430()` function (which I will describe in greater detail later). Then we declare and initialize `bitstring`, a counter `i`, and `packetIndex2`. `bitstring` is the register that holds our string of 32 bits after our array is full. `packetIndex2` does the same thing as `packetIndex`, only it is separate because the two need to operate independently of each other sometimes.
+This is the main loop script. It changes the settings for the outputs, delays, changes again, delays again, etc.
 ```
 void main(void) {
 
 	initMSP430();
-	P2OUT&=~(BIT4|BIT2|BIT1|BIT5);
+	P2OUT&=~(BIT4|BIT2|BIT1|BIT5); // ensure everything is stopped before we begin.
 	stopRobot();
 	while(1){
 	moveRobotForward();
@@ -116,9 +111,7 @@ void main(void) {
 	}
 } // end main
 ```
-This infinite loop constantly checks for `packet_flag`. When that is `1`, that means that the counter has interrupted 34 times and `packetData` has enough bits in its array to make a unique message to work from. The first thing we do is disable interrupts so we're not interrutped during this process. Then we reset `packetIndex2`, search for the start bit (marked by the number `2`), then bitshift each bit of the array into `bitstring`.
-
-After populating `bitstring`, I compare it with my definitions for what certain buttons are supposed to be, and then perform actions on an LED (or multiple LEDs) depending on the button press. AFter that, I delay a little bit in case there are any ghost signals still coming from the remote, reset the variables I used in this if statement, and enable interrupts again to start the process all over.
+This is the initialization for the MSP430 with its outputting.
 ```
 void initMSP430() {
 
@@ -160,7 +153,7 @@ void initMSP430() {
 
 ### A Functionality
 ###### Taken from `main.c`
-Like in basic functionality, this portion calls our library and header file, then it goes into declaring the nokia functions. These nokia functions can be found in `nokia.asm`. Everything else is just like what it did in basic functionality.
+This is the initialization. It does pretty much the same thing as basic functionality, with the added pieces like `packetData[]` and `packetIndex` that make the IR sensor reading work.
 ```
 #include <msp430g2553.h>
 #include "start5.h"
@@ -170,7 +163,7 @@ int32	packetData[48];
 int8	packetIndex = 0;
 unsigned char get_some=FALSE;
 ```
-The only part of the rest of the code that changed for A functionality was part of the main loop, so I will go into more detail describing what goes in within there. We first initialize the nokia display, clear it, and get ready to get started on the rest of our loop.
+This is the main loop for A Functionality.
 ```
 void main(void) {
 
@@ -232,7 +225,8 @@ void main(void) {
 	} // end infinite loop
 } // end main
 ```
-After this, I compare `bitstring` to our predefined values for each button press. If it is a certain button, I will move our `x` or `y` coordinates accordingly, though the block does not get drawn until later. I also left the LED commands in the if statements for debugging purposes.
+Here we define our ISR. It is meant to trigger of P2.6, so we use `PORT2_VECTOR`. Basically, what the interrupt does is interrupt each time P2.6 (which is connected to the IR sensor) edge triggers, counts how long it stays at `1`, decides whether it's a `0` or `1`, then stores that value into `packetData`. Once we've triggered 34 times (which is enough to get a unique message from the remote), we flag and our main loop takes care of the rest.
+
 ```
 #pragma vector = PORT2_VECTOR			// This is from the MSP430G2553.h file
 
