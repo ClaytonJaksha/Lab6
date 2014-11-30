@@ -16,20 +16,20 @@ To begin incorporating course concepts on the final course project.
 In this lab, we will use `TA0` to measure incoming IR signals from our remote control, `TA1` to control left motor PWM outputs and right motor outputs.
 
 ##### Directionality Matrix
-| Directionality | Left Motor <br></br> + Lead | Left Motor <br></br> - Lead | Right Motor <br></br> + Lead | Right Motor <br></br> - Lead |
+| Directionality | Left Motor <br></br> Red Lead <br></br> PWM | Left Motor <br></br> Black Lead <br></br> GPIO | Right Motor <br></br> Red Lead <br></br> PWM | Right Motor <br></br> Black Lead <br></br> GPIO |
 |----------------|:-----------------:|:-----------------:|:------------------:|:------------------:|
-| Forward        |        PWM        |         0         |         PWM        |          0         |
-| Left           |         0         |        PWM        |         PWM        |          0         |
-| Right          |        PWM        |         0         |          0         |         PWM        |
-| Reverse        |         0         |        PWM        |          0         |         PWM        |
+| Forward        |        OUTMOD_3        |         0         |         OUTMOD_3        |          0         |
+| Left           |        OUTMOD_7         |        1       |         OUTMOD_3        |          0         |
+| Right          |        OUTMOD_3        |         0         |          OUTMOD_7         |         1        |
+| Reverse        |        OUTMOD_7         |        1        |          OUTMOD_7         |         1        |
 
-The positive lead of the left motor will be attached to `P1.2`
+The red lead of the left motor will be driven by `P2.1`
 
-The negative lead of the left motor will be attached to `P1.3`
+The black lead of the left motor will be driven by `P2.3`
 
-The positive lead of the right motor will be attached to `P1.4`
+The red lead of the right motor will be attached to `P1.5`
 
-The negative lead of the right motor will be attached to `P1.5`
+The black lead of the right motor will be attached to `P1.4`
 
 #### Pseudocode
 ##### `moveRobotForward()`
