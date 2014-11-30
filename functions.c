@@ -1,9 +1,9 @@
-/*
- * functions.c
- *
- *  Created on: Nov 14, 2014
- *      Author: c16clayton.jaksha
- */
+//-----------------------------------------------------------------
+// Name: Jaksha, Clayton, B.
+// File: functions.c
+// Date: 30 NOV 2014
+// Purp: functions that make Robert the robot move in a certain directions
+//-----------------------------------------------------------------
 #include <msp430g2553.h>
 #include "functions.h"
 void moveRobotForward(void)
