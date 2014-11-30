@@ -1,7 +1,15 @@
-Lab6
+Lab 6
 ====
+#### Clayton Jaksha | ECE 382 | Dr. York | M2A
+***Note: I use remote control DFEC #6 throughout the course of this lab***
+## Objective and Purpose
+### Objective
 
-ECE 382 Lab 6: Robot Motion
+The objective of this lab is to use pulse-width modulation to drive our robot's (hereafter referred to as "Robert") main wheels.
+
+### Purpose
+
+To begin incorporating course concepts on the final course project.
 
 
 ## Preliminary Design
