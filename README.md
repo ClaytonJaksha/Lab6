@@ -68,17 +68,11 @@ void moveRobotForward(void);
 
 #### Basic Functionality
 
-The idea behind basic functionality is to have an LED toggle with a remote control that utilizes an interrupt service routine. In order to make this work, I will need to interrupt on each IR edge from the remote control, time the length of the `1` from the remote control to determine if it is sending a `0` or `1`, then interrupt when I have received an adequate number of `0`s and `1`s.
+Once I program basic functions that will make the wheels spin in the desired direction and speed, I will program them in to a script. I will call those functions followed by some amount of delay in the form of `__delay_cycles(###)`.
 
-After interrupting, I will compile my array of `0`s and `1`s into a single register, compare that register with my predefined values for button presses (explored in pre-lab/day 1 activities), then perform an action based on the button that was pressed.
+#### Remote-Control Robert
 
-During this process, it would be smart to disable maskable interrutps since any 'ghost' signals from my remote (or others) could interrupt my sequence and throw everything off. If, for some reason, I get a signal that does not match any predefined button, I will merely let the signal pass, reset all my indices, and try again.
-
-#### Remote-Control Etch-A-Sketch
-
-With etch-a-sketch functionality, I simply aim to operate my etch-a-sketch made in lab 4 with a remote control. The process will be a schmorgeshboard of basic functionality for this lab and my etch-a-sketch code from lab 4. Basically, I will reintroduce the variables I used from the lab 4 code and then implement the `if` statements from lab 4 within my basic functionality code.
-
-I will also need to include the `nokia.asm` code from lab 4 and any display initalization.
+For this part, I will affix my IR sensor (seen in hardware schematic) and then reuse my code from Lab 5. Instead of using script to control the robot for this portion, I will use `if` statements that change Robert's movement based on the signal it takes in from the remote control.
 
 ## Code Walkthrough
 ### Basic Functionality
