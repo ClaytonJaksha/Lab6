@@ -1,9 +1,9 @@
-/*
- * start5.h
- *
- *  Created on: Nov 19, 2014
- *      Author: c16clayton.jaksha
- */
+//-----------------------------------------------------------------
+// Name: Jaksha, Clayton, B.
+// File: start5.h
+// Date: 30 NOV 2014
+// Purp: header file for stuff that makes the IR sensing work right
+//-----------------------------------------------------------------
 
 #ifndef START5_H_
 #define START5_H_
