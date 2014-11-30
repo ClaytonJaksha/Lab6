@@ -15,7 +15,7 @@ To begin incorporating course concepts on the final course project.
 ## Preliminary Design
 In this lab, we will use `TA0` to measure incoming IR signals from our remote control, `TA1` to control left motor PWM outputs and right motor outputs.
 
-##### Directionality Matrix
+#### Directionality Matrix
 | Directionality | Left Motor <br></br> Red Lead <br></br> PWM | Left Motor <br></br> Black Lead <br></br> GPIO | Right Motor <br></br> Red Lead <br></br> PWM | Right Motor <br></br> Black Lead <br></br> GPIO |
 |----------------|:-----------------:|:-----------------:|:------------------:|:------------------:|
 | Forward        |        OUTMOD_3        |         0         |         OUTMOD_3        |          0         |
@@ -30,7 +30,8 @@ The black lead of the left motor will be driven by `P2.3`
 The red lead of the right motor will be attached to `P1.5`
 
 The black lead of the right motor will be attached to `P1.4`
-
+#### Hardware Schematic
+![alt text](https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t34.0-12/10836211_1001492989864963_1971890665_n.jpg?oh=77c8c6f40db9cd797dcc3c54f3648a04&oe=547E3D40&__gda__=1417478673_3e5f336960c24b2c4275500b1e7637e1 "dat hardware")
 #### Pseudocode
 ##### `moveRobotForward()`
 ```
@@ -78,8 +79,7 @@ During this process, it would be smart to disable maskable interrutps since any 
 With etch-a-sketch functionality, I simply aim to operate my etch-a-sketch made in lab 4 with a remote control. The process will be a schmorgeshboard of basic functionality for this lab and my etch-a-sketch code from lab 4. Basically, I will reintroduce the variables I used from the lab 4 code and then implement the `if` statements from lab 4 within my basic functionality code.
 
 I will also need to include the `nokia.asm` code from lab 4 and any display initalization.
-##### Hardware Schematic
-![alt text](http://i.imgur.com/qFUdH2t.png "dat hardware")
+
 ## Code Walkthrough
 ### Basic Functionality
 ###### Taken from `main_basic.c`
