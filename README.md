@@ -280,6 +280,11 @@ __interrupt void pinChange (void) {
 
 Initialization remained exactly the same from basic functionality, so I will not re-explain them.
 
+#### Hardware Implementation
+
+![alt text](http://i.imgur.com/gvoO1bs.jpg "Robert's brainzzzzz")
+
+
 ## Debugging
 
 Debugging was primarily done by looking at the Nokia 1202 display and the stored register and expression values within CCS-6.0's debugging feature. I also used an oscilloscope to peer into the PWM signals coming from the microcontroller and from the motor driver chip. Also, for A functionality, ensured my old code from lab 5 still worked before continuing onward with the lab..
